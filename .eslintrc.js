@@ -23,6 +23,10 @@ module.exports = {
     parserOptions: {
         ecmaVersion: "latest",
         sourceType: "module",
+        ecmaFeatures: {
+            jsx: true,
+            tsx:true
+        }
     },
     plugins: ["@typescript-eslint", "react"],
     rules: {
@@ -34,7 +38,7 @@ module.exports = {
         "no-unused-vars": "off",
         "@typescript-eslint/no-use-before-define": ["error"],
         "@typescript-eslint/no-unused-vars": [
-            "warn",
+            "error",
             {
                 vars: "all",
                 varsIgnorePattern: "^_",

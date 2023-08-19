@@ -73,7 +73,7 @@ function CustomCarousel(
 ) {
     const prevRefNav = useRef<HTMLButtonElement>(null);
     const nextRefNav = useRef<HTMLButtonElement>(null);
-    const itemsNotNull=props.items && Array.isArray(props.items)?props.items:[]
+    const itemsNotNull=props.items && Array.isArray(props.items)?props.items:[];
     return (
         <div
             {...props}
