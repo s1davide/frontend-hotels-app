@@ -73,14 +73,14 @@ function CustomCarousel(
 ) {
     const prevRefNav = useRef<HTMLButtonElement>(null);
     const nextRefNav = useRef<HTMLButtonElement>(null);
-
+    const itemsNotNull=props.items && Array.isArray(props.items)?props.items:[]
     return (
         <div
             {...props}
             className={`${props.className} carousel-custom relative`}
         >
             <Swiper spaceBetween={4} breakpoints={breakpoints}>
-                {(props.items||[]).map((v, k) => (
+                {itemsNotNull.map((v, k) => (
                     <SwiperSlide key={k}>{hotelTemplate(k,v)}</SwiperSlide>
                 ))}
                 <CustomNavigation prevRef={prevRefNav} nextRef={nextRefNav} />
