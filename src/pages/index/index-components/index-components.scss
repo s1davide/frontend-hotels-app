@@ -1,0 +1,41 @@
+.bookcomponent {
+    padding-top: 7px;
+    position: relative;
+}
+.bookcomponent .p-inputtext {
+    border: none !important;
+}
+.bookcomponent .childsbookcomponent {
+    margin-bottom: 7px;
+    margin-left: 7px;
+}
+
+@media (min-width: 990px) {
+    .bookcomponent {
+        width: 98%;
+        padding-right: 7px;
+    }
+    .inputbookcomponent {
+        width: 310px !important;
+    }
+}
+@media (max-width: 989px) {
+    .bookcomponent {
+        width: 100%;
+        padding-right: 14px;
+        left: 0;
+        flex-direction: column;
+    }
+    .inputbookcomponent {
+        width: 100% !important;
+    }
+    .childsbookcomponent {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .cards-carousel-hotels {
+        width: 95% !important;
+    }
+}

@@ -1,0 +1,22 @@
+.main-login {
+    height: 100vh;
+    z-index: -1;
+}
+.main-login .p-card {
+    max-width: 398px;
+    background-color: rgba($color: #ffffff, $alpha: 0.4);
+    backdrop-filter: blur(24px);
+}
+.p-card-content {
+    padding: 0 !important;
+}
+
+h1,
+label,
+p {
+    color: rgb(17, 17, 17);
+}
+header,
+footer {
+    text-align: center;
+}

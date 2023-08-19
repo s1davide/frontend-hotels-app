@@ -1,0 +1,35 @@
+.daterangeinput {
+    width: 91%;
+}
+.daterangeinput input {
+    padding-right: 2px;
+}
+.rs-stack-item {
+    // width: 100%;
+}
+
+.rs-picker-toggle {
+    padding-right: 3px !important;
+    padding-bottom: 12px !important;
+    padding-top: 12px !important;
+    border: none !important;
+}
+.rs-picker-toggle-caret {
+    display: none;
+    margin-top: 3px;
+}
+.rs-picker-toggle {
+    box-shadow: none;
+}
+
+@media (max-width: 591px) {
+    .rs-picker-daterange-calendar-group {
+        height: auto;
+    }
+    .rs-picker-daterange-menu {
+        width: 305px;
+    }
+    .rs-picker-toolbar {
+        width: 303px;
+    }
+}
