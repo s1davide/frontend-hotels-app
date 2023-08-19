@@ -80,10 +80,11 @@ function CustomCarousel(
             className={`${props.className} carousel-custom relative`}
         >
             <Swiper spaceBetween={4} breakpoints={breakpoints}>
-                {itemsNotNull.map((v, k) => (
+                {itemsNotNull?.map((v, k) => (
                     <SwiperSlide key={k}>{hotelTemplate(k,v)}</SwiperSlide>
                 ))}
-                <CustomNavigation prevRef={prevRefNav} nextRef={nextRefNav} />
+                No hay hoteles disponibles
+                { <CustomNavigation prevRef={prevRefNav} nextRef={nextRefNav} />}
             </Swiper>
             <Button
                 icon="pi pi-chevron-left bg-white"

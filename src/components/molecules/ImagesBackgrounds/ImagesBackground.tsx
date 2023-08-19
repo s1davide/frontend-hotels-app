@@ -52,7 +52,7 @@ const ImagesBackgrounds = () => {
             <div
                 className={`${allImagesLoaded ? "show-images" : "hide-images"}`}
             >
-                {images.map((img, key) => (
+                {images?.map((img, key) => (
                     <picture key={key}>
                         <ImageComponent
                             media="(min-width:900px)"
