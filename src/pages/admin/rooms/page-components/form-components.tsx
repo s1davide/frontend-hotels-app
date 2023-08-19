@@ -133,12 +133,12 @@ export const Inputs = ({
     const [imageLoaded, setImageLoaded] = useState(false);
     const { id } = useParams();
     const { data } = useFetchReferences({ field: "domain", value: "DOM_STATE" });
-    const itemsReference = data?.map<SelectItem>((item) => ({
+    const itemsReference = data?.map?.<SelectItem>((item) => ({
         label: item.description,
         value: item.range_value,
     }));
     const { data: dataHotels } = useFetchHotels();
-    const listHotels = dataHotels?.map<SelectItem>((item) => ({
+    const listHotels = dataHotels?.map?.<SelectItem>((item) => ({
         label: item.name,
         value: item.id,
     }));

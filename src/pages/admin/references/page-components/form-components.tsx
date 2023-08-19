@@ -115,7 +115,7 @@ export const Inputs = ({
     formikInstance: FormikInstance
 }) => {
     const { data } = useFetch({ field: "domain", value: "DOM_STATE" });
-    const itemsReference = data?.map<SelectItem>((item) => ({
+    const itemsReference = data?.map?.<SelectItem>((item) => ({
         label: item.description,
         value: item.range_value,
     }));

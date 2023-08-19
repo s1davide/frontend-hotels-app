@@ -14,7 +14,7 @@ export const GroupItems = () => {
             <div className="mb-2 pl-1 font-semibold">
                 <span>Menú Principal</span>
             </div>
-            {itemsSidebar?.map((item, key) => (
+            {itemsSidebar?.map?.((item, key) => (
                 <li
                     key={key}
                     onClick={(e) => (e.preventDefault(), navigate(item.url))}

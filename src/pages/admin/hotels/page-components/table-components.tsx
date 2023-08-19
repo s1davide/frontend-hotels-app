@@ -72,7 +72,7 @@ export const ColumnsComponents = (
     data: DataTypeWithId[],
     update: (newData: DataTypeWithId) => void
 ) =>
-    columnsTable?.map((col, key) => {
+    columnsTable?.map?.((col, key) => {
         if (col.field === "state")
             return (
                 <Column

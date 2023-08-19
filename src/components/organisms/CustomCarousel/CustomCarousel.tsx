@@ -80,7 +80,7 @@ function CustomCarousel(
             className={`${props.className} carousel-custom relative`}
         >
             <Swiper spaceBetween={4} breakpoints={breakpoints}>
-                {itemsNotNull?.map((v, k) => (
+                {itemsNotNull?.map?.((v, k) => (
                     <SwiperSlide key={k}>{hotelTemplate(k,v)}</SwiperSlide>
                 ))}
                 No hay hoteles disponibles
