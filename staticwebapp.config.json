@@ -5,6 +5,8 @@
             "/assets/css/*",
             "/assets/*.css",
             "/assets/*.{png,jpg,gif,webp}",
+            "/assets/icons/*.{png,jpg,gif,webp}",
+            "/assets/img/*.{png,jpg,gif,webp}",
             "/*.css"
         ]
     },
