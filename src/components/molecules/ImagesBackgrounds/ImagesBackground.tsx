@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react"
-import Image1 from "/assets/img/login/tropical.webp"
-import Image1Small from "/assets/img/login/tropical-small.webp"
-import Image2 from "/assets/img/login/sea-pool.webp"
-import Image2Small from "/assets/img/login/sea-pool-small.webp"
-import Image3 from "/assets/img/login/white-sky-umbrella-nobody-party.webp"
-import Image3Small from "/assets/img/login/white-sky-umbrella-nobody-party-small.webp"
-import "./ImagesBackground.scss"
-import ImageComponent from "src/components/atoms/Image/Image"
+import React, { useEffect, useState } from "react";
+import Image1 from "/assets/img/login/tropical.webp";
+import Image1Small from "/assets/img/login/tropical-small.webp";
+import Image2 from "/assets/img/login/sea-pool.webp";
+import Image2Small from "/assets/img/login/sea-pool-small.webp";
+import Image3 from "/assets/img/login/white-sky-umbrella-nobody-party.webp";
+import Image3Small from "/assets/img/login/white-sky-umbrella-nobody-party-small.webp";
+import "./ImagesBackground.scss";
+import ImageComponent from "src/components/atoms/Image/Image";
 
 const images = [
     { name: Image1, nameSmall: Image1Small, alt: "Imagen tropical hotel" },
@@ -20,29 +20,29 @@ const images = [
         nameSmall: Image3Small,
         alt: "Imagen hotel sombrillas piscina",
     },
-]
+];
 
 const ImagesBackgrounds = () => {
-    const [currentIndex, setCurrentIndex] = useState(0)
-    const [imagesLoaded, setImagesLoaded] = useState(0)
-    const [allImagesLoaded, setImagesAllLoaded] = useState(false)
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [imagesLoaded, setImagesLoaded] = useState(0);
+    const [allImagesLoaded, setImagesAllLoaded] = useState(false);
 
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex(
                 (prevIndex: number) => (prevIndex + 1) % images.length
-            )
-        }, 5000)
+            );
+        }, 5000);
 
-        return () => clearInterval(interval)
-    }, [])
+        return () => clearInterval(interval);
+    }, []);
 
     useEffect(() => {
         if (imagesLoaded === images.length)
-            setTimeout(() => setImagesAllLoaded(true), 400)
-        else return
-        return
-    }, [imagesLoaded, allImagesLoaded])
+            setTimeout(() => setImagesAllLoaded(true), 400);
+        else return;
+        return;
+    }, [imagesLoaded, allImagesLoaded]);
     return (
         <div
             className={
@@ -84,6 +84,6 @@ const ImagesBackgrounds = () => {
                 ))}
             </div>
         </div>
-    )
-}
-export default ImagesBackgrounds
+    );
+};
+export default ImagesBackgrounds;

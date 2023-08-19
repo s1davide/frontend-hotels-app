@@ -1,5 +1,5 @@
-import React, { ReactEventHandler } from "react"
-import "./Image.scss"
+import React, { ReactEventHandler } from "react";
+import "./Image.scss";
 type ReactPropsImage = React.DetailedHTMLProps<
     React.ImgHTMLAttributes<HTMLImageElement>,
     HTMLImageElement
@@ -16,7 +16,7 @@ const ImageComponent = (props: PropsImage) => {
         ...props,
         className: ` ${props.className ? props.className : ""}`,
         type: "",
-    } as unknown as ReactPropsImage
+    } as unknown as ReactPropsImage;
 
     return (
         <>
@@ -41,6 +41,6 @@ const ImageComponent = (props: PropsImage) => {
                 />
             )}
         </>
-    )
-}
-export default ImageComponent
+    );
+};
+export default ImageComponent;

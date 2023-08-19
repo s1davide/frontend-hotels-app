@@ -1,9 +1,9 @@
-import React, { DetailedHTMLProps, HTMLAttributes, useState } from "react"
-import LogoImg from "/assets/icons/logo.webp"
-import LogoImgWhite from "/assets/icons/logowhite.svg"
-import { ProgressSpinner } from "primereact/progressspinner"
+import React, { DetailedHTMLProps, HTMLAttributes, useState } from "react";
+import LogoImg from "/assets/icons/logo.webp";
+import LogoImgWhite from "/assets/icons/logowhite.svg";
+import { ProgressSpinner } from "primereact/progressspinner";
 
-import "./Logo.scss"
+import "./Logo.scss";
 type LogoProps = HTMLAttributes<HTMLDivElement> & {
     imageheight?: string
     type?: "clear" | "dark"
@@ -15,8 +15,8 @@ type LogoProps = HTMLAttributes<HTMLDivElement> & {
     imageclassname?: string
 }
 const Logo = (props: LogoProps) => {
-    const [loadingImage, setLoadingImage] = useState(true)
-    const size = props.imageheight ? props.imageheight : "67px"
+    const [loadingImage, setLoadingImage] = useState(true);
+    const size = props.imageheight ? props.imageheight : "67px";
     return (
         <div
             {...props}
@@ -64,7 +64,7 @@ const Logo = (props: LogoProps) => {
                 Hoteles App
             </p>
         </div>
-    )
-}
+    );
+};
 
-export default Logo
+export default Logo;

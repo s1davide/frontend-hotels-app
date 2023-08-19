@@ -1,14 +1,14 @@
-import { Button } from "primereact/button"
-import React, { HTMLAttributes } from "react"
+import { Button } from "primereact/button";
+import React, { HTMLAttributes } from "react";
 
-import "rsuite/dist/rsuite.min.css"
-import CustomDateRange from "src/components/atoms/CustomDateRange/CustomDateRange"
-import InputWithIcon from "src/components/atoms/InputWithIcon/InputWithIcon"
-import NumberOfPersons from "src/components/molecules/NumberOfPersons/NumberOfPersons"
+import "rsuite/dist/rsuite.min.css";
+import CustomDateRange from "src/components/atoms/CustomDateRange/CustomDateRange";
+import InputWithIcon from "src/components/atoms/InputWithIcon/InputWithIcon";
+import NumberOfPersons from "src/components/molecules/NumberOfPersons/NumberOfPersons";
 
-import Icon from "/assets/icons/icomoon-free_mobile.svg"
+import Icon from "/assets/icons/icomoon-free_mobile.svg";
 
-import "./index-components.scss"
+import "./index-components.scss";
 export const BookComponent = (props: HTMLAttributes<HTMLDivElement>) => {
     return (
         <div
@@ -30,8 +30,8 @@ export const BookComponent = (props: HTMLAttributes<HTMLDivElement>) => {
                 icon="pi pi-search"
             />
         </div>
-    )
-}
+    );
+};
 
 export const MobileSection = () => (
     <section
@@ -53,4 +53,4 @@ export const MobileSection = () => (
         </section>
         <img className="hidden md:block" src={Icon} alt="" />
     </section>
-)
+);

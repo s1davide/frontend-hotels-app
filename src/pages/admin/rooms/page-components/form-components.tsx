@@ -1,16 +1,16 @@
-import { Dropdown, DropdownChangeEvent } from "primereact/dropdown"
-import { InputText, InputTextProps } from "primereact/inputtext"
-import React, { HTMLAttributes, HTMLInputTypeAttribute, useState } from "react"
-import { useFetchOne } from "../page-functions/fetch-data"
-import { SelectItem } from "primereact/selectitem"
-import InputError from "src/components/atoms/InputError/InputError"
-import { FormikTouched, useFormik } from "formik"
-import { InferType, object, string } from "yup"
-import { useFetch as useFetchReferences } from "../../references/page-functions/fetch-data"
-import { useFetch as useFetchHotels } from "src/pages/admin/hotels/page-functions/fetch-data"
-import InputFile from "src/components/atoms/InputFile/InputFile"
-import { useParams } from "react-router-dom"
-import { Dialog } from "primereact/dialog"
+import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
+import { InputText, InputTextProps } from "primereact/inputtext";
+import React, { HTMLAttributes, HTMLInputTypeAttribute, useState } from "react";
+import { useFetchOne } from "../page-functions/fetch-data";
+import { SelectItem } from "primereact/selectitem";
+import InputError from "src/components/atoms/InputError/InputError";
+import { FormikTouched, useFormik } from "formik";
+import { InferType, object, string } from "yup";
+import { useFetch as useFetchReferences } from "../../references/page-functions/fetch-data";
+import { useFetch as useFetchHotels } from "src/pages/admin/hotels/page-functions/fetch-data";
+import InputFile from "src/components/atoms/InputFile/InputFile";
+import { useParams } from "react-router-dom";
+import { Dialog } from "primereact/dialog";
 
 type InputOptions = {
     type?: HTMLInputTypeAttribute | "select"
@@ -32,7 +32,7 @@ type PropsCustomBasicInput = {
     options?: InputOptions
 }
 
-export const fileSizeLimit = 800000
+export const fileSizeLimit = 800000;
 
 const fieldsValidations = {
     hotel_id: string().required("Este campo es requerido"),
@@ -43,15 +43,15 @@ const fieldsValidations = {
     state: string().required("Este campo es requerido"),
     file: string().required("Este campo es requerido"),
     image_url: string(),
-}
+};
 
 export const CustomInput = (
     props: HTMLAttributes<HTMLDivElement> & PropsCustomBasicInput
 ) => {
-    const touched = props.formikInstance?.touched
-    const errors = props.formikInstance?.errors
-    const isValid = !!(touched![props.name] && errors![props.name])
-    const message = errors![props.name]
+    const touched = props.formikInstance?.touched;
+    const errors = props.formikInstance?.errors;
+    const isValid = !!(touched![props.name] && errors![props.name]);
+    const message = errors![props.name];
     return (
         <div className={`field ${props.className}`}>
             <label htmlFor={props.name}>{props.label}</label>
@@ -85,66 +85,66 @@ export const CustomInput = (
             )}
             {InputError(isValid, message as string)}
         </div>
-    )
-}
+    );
+};
 
 export const Schema = (idUpdate: boolean) => {
     const fieldValidationsDynamic = idUpdate
         ? { ...fieldsValidations, file: string() }
-        : fieldsValidations
-    return object().shape(fieldValidationsDynamic)
-}
+        : fieldsValidations;
+    return object().shape(fieldValidationsDynamic);
+};
 export type DataType = InferType<ReturnType<typeof Schema>>
 export type DataTypeWithId = DataType & { id: number }
 export const initialValues = Object.keys(fieldsValidations).reduce(
     (previous, current) => ({ ...previous, [current]: "" }),
     {}
-) as unknown as DataType
+) as unknown as DataType;
 
 export const loadItemForUpdate = (
     id: string,
     formikInstance: FormikInstance
 ) => {
-    const { data } = useFetchOne(id, "get_value_for_update")
+    const { data } = useFetchOne(id, "get_value_for_update");
     const initialValuesFormik = formikInstance.initialValues as {
         [key: string]: unknown
-    }
-    if (!data) return
+    };
+    if (!data) return;
     Object.keys(initialValuesFormik).forEach((field) => {
-        initialValuesFormik[field] = data[field as keyof DataTypeWithId]
-    })
-}
+        initialValuesFormik[field] = data[field as keyof DataTypeWithId];
+    });
+};
 
 export const cleanFieldsOnCreate = (formikInstance: FormikInstance) => {
     const initialValuesFormik = formikInstance.initialValues as {
         [key: string]: unknown
-    }
+    };
     Object.keys(initialValuesFormik).forEach((field) => {
-        initialValuesFormik[field] = ""
-    })
-}
+        initialValuesFormik[field] = "";
+    });
+};
 
 export const Inputs = ({
     formikInstance,
 }: {
     formikInstance: FormikInstance
 }) => {
-    const [showDialog, setShowDialog] = useState(false)
-    const [imageLoaded, setImageLoaded] = useState(false)
-    const { id } = useParams()
-    const { data } = useFetchReferences({ field: "domain", value: "DOM_STATE" })
+    const [showDialog, setShowDialog] = useState(false);
+    const [imageLoaded, setImageLoaded] = useState(false);
+    const { id } = useParams();
+    const { data } = useFetchReferences({ field: "domain", value: "DOM_STATE" });
     const itemsReference = data?.map<SelectItem>((item) => ({
         label: item.description,
         value: item.range_value,
-    }))
-    const { data: dataHotels } = useFetchHotels()
+    }));
+    const { data: dataHotels } = useFetchHotels();
     const listHotels = dataHotels?.map<SelectItem>((item) => ({
         label: item.name,
         value: item.id,
-    }))
+    }));
 
     const fileInputError =
-        formikInstance.errors.file && formikInstance.touched.file
+        formikInstance.errors.file && formikInstance.touched.file;
 
     return (
         <>
@@ -241,11 +241,11 @@ export const Inputs = ({
                         src={formikInstance.values.image_url}
                         alt="Imagen actual del hotel"
                         onLoad={() => {
-                            setImageLoaded(true)
+                            setImageLoaded(true);
                         }}
                     />
                 </div>
             </Dialog>
         </>
-    )
-}
+    );
+};

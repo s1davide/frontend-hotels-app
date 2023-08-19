@@ -1,25 +1,25 @@
-import React, { Suspense, lazy, useContext, useEffect } from "react"
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import MainLayout from "./layouts/MainLayout/MainLayout.tsx"
-import Index from "src/pages/index/index.tsx"
-import NotFound from "./pages/not-found/not-found.tsx"
-import { PrimeReactContext } from "primereact/api"
-import AppLayout from "./layouts/AppLayout/AppLayout.tsx"
+import React, { Suspense, lazy, useContext, useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import MainLayout from "./layouts/MainLayout/MainLayout.tsx";
+import Index from "src/pages/index/index.tsx";
+import NotFound from "./pages/not-found/not-found.tsx";
+import { PrimeReactContext } from "primereact/api";
+import AppLayout from "./layouts/AppLayout/AppLayout.tsx";
 
-const Login = lazy(() => import("./pages/auth/Login.tsx"))
-const ListHotels = lazy(() => import("./pages/admin/hotels/index.tsx"))
+const Login = lazy(() => import("./pages/auth/Login.tsx"));
+const ListHotels = lazy(() => import("./pages/admin/hotels/index.tsx"));
 const CreateHotels = lazy(
     () => import("./pages/admin/hotels/create_update.tsx")
-)
-const ListReferences = lazy(() => import("./pages/admin/references/index.tsx"))
+);
+const ListReferences = lazy(() => import("./pages/admin/references/index.tsx"));
 const CreateReferences = lazy(
     () => import("./pages/admin/references/create_update.tsx")
-)
-const ListRooms = lazy(() => import("./pages/admin/rooms/index.tsx"))
-const CreateRooms = lazy(() => import("./pages/admin/rooms/create_update.tsx"))
+);
+const ListRooms = lazy(() => import("./pages/admin/rooms/index.tsx"));
+const CreateRooms = lazy(() => import("./pages/admin/rooms/create_update.tsx"));
 const Router = () => {
-    const { setRipple } = useContext(PrimeReactContext)
-    useEffect(() => setRipple(true))
+    const { setRipple } = useContext(PrimeReactContext);
+    useEffect(() => setRipple(true));
 
     return (
         <BrowserRouter>
@@ -114,6 +114,6 @@ const Router = () => {
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </BrowserRouter>
-    )
-}
-export default Router
+    );
+};
+export default Router;

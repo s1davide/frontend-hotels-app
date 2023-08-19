@@ -1,11 +1,11 @@
-import React, { HTMLAttributes } from "react"
-import Logo from "src/components/atoms/Logo/Logo"
-import "./MainHeader.scss"
-import { Button } from "primereact/button"
-import { useNavigate } from "react-router-dom"
-import { Toolbar } from "primereact/toolbar"
+import React, { HTMLAttributes } from "react";
+import Logo from "src/components/atoms/Logo/Logo";
+import "./MainHeader.scss";
+import { Button } from "primereact/button";
+import { useNavigate } from "react-router-dom";
+import { Toolbar } from "primereact/toolbar";
 const MainHeader = (props: HTMLAttributes<HTMLElement>) => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     return (
         <header
@@ -39,7 +39,7 @@ const MainHeader = (props: HTMLAttributes<HTMLElement>) => {
                 }
             ></Toolbar>
         </header>
-    )
-}
+    );
+};
 
-export default MainHeader
+export default MainHeader;

@@ -1,11 +1,11 @@
-import React from "react"
-import { Outlet } from "react-router-dom"
-import "./MainLayout.scss"
+import React from "react";
+import { Outlet } from "react-router-dom";
+import "./MainLayout.scss";
 
-import "primeflex/primeflex.min.css"
-import "primeicons/primeicons.css"
-import MainHeader from "src/components/organisms/Headers/MainHeader/MainHeader"
-import MainFooter from "src/components/organisms/Footers/MainFooter/MainFooter"
+import "primeflex/primeflex.min.css";
+import "primeicons/primeicons.css";
+import MainHeader from "src/components/organisms/Headers/MainHeader/MainHeader";
+import MainFooter from "src/components/organisms/Footers/MainFooter/MainFooter";
 
 const MainLayout = () => {
     return (
@@ -25,7 +25,7 @@ const MainLayout = () => {
                 <MainFooter></MainFooter>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default MainLayout
+export default MainLayout;

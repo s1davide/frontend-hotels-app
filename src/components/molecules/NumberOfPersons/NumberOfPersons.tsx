@@ -1,11 +1,11 @@
-import { InputText, InputTextProps } from "primereact/inputtext"
-import { OverlayPanel } from "primereact/overlaypanel"
-import React, { useRef, useState } from "react"
-import InputNumberCustom from "src/components/atoms/InputNumberCustom/InputNumberCustom"
+import { InputText, InputTextProps } from "primereact/inputtext";
+import { OverlayPanel } from "primereact/overlaypanel";
+import React, { useRef, useState } from "react";
+import InputNumberCustom from "src/components/atoms/InputNumberCustom/InputNumberCustom";
 type InputType = InputTextProps & React.RefAttributes<HTMLInputElement>
 function NumberOfPersons(props: InputType) {
-    const menu = useRef<OverlayPanel>(null)
-    const [adults, setAdults] = useState(0)
+    const menu = useRef<OverlayPanel>(null);
+    const [adults, setAdults] = useState(0);
     return (
         <>
             <OverlayPanel ref={menu}>
@@ -34,7 +34,7 @@ function NumberOfPersons(props: InputType) {
                 aria-haspopup
             />
         </>
-    )
+    );
 }
 
-export default NumberOfPersons
+export default NumberOfPersons;

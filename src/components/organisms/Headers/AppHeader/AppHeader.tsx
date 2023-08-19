@@ -1,14 +1,14 @@
-import React, { HTMLAttributes, useContext } from "react"
-import Logo from "src/components/atoms/Logo/Logo"
-import { Avatar } from "primereact/avatar"
-import { SidebarContext } from "src/services/ProvidersContext"
-import { Toolbar } from "primereact/toolbar"
-import "./AppHeader.scss"
-import { Button } from "primereact/button"
+import React, { HTMLAttributes, useContext } from "react";
+import Logo from "src/components/atoms/Logo/Logo";
+import { Avatar } from "primereact/avatar";
+import { SidebarContext } from "src/services/ProvidersContext";
+import { Toolbar } from "primereact/toolbar";
+import "./AppHeader.scss";
+import { Button } from "primereact/button";
 const AppHeader = (
     props: HTMLAttributes<HTMLElement> & { menubarclassname?: string }
 ) => {
-    const { openSidebar, setOpenSidebar } = useContext(SidebarContext)
+    const { openSidebar, setOpenSidebar } = useContext(SidebarContext);
     return (
         <header {...props}>
             <Toolbar
@@ -48,7 +48,7 @@ const AppHeader = (
                 }
             ></Toolbar>
         </header>
-    )
-}
+    );
+};
 
-export default AppHeader
+export default AppHeader;

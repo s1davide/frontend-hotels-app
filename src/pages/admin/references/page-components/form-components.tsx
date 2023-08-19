@@ -1,11 +1,11 @@
-import { Dropdown, DropdownChangeEvent } from "primereact/dropdown"
-import { InputText, InputTextProps } from "primereact/inputtext"
-import React, { HTMLAttributes, HTMLInputTypeAttribute } from "react"
-import { useFetch, useFetchOne } from "../page-functions/fetch-data"
-import { SelectItem } from "primereact/selectitem"
-import InputError from "src/components/atoms/InputError/InputError"
-import { FormikTouched, useFormik } from "formik"
-import { InferType, object, string } from "yup"
+import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
+import { InputText, InputTextProps } from "primereact/inputtext";
+import React, { HTMLAttributes, HTMLInputTypeAttribute } from "react";
+import { useFetch, useFetchOne } from "../page-functions/fetch-data";
+import { SelectItem } from "primereact/selectitem";
+import InputError from "src/components/atoms/InputError/InputError";
+import { FormikTouched, useFormik } from "formik";
+import { InferType, object, string } from "yup";
 
 type InputOptions = {
     type?: HTMLInputTypeAttribute | "select"
@@ -26,22 +26,22 @@ type PropsCustomBasicInput = {
     required?: boolean
     options?: InputOptions
 }
-export const fileSizeLimit = 600000
+export const fileSizeLimit = 600000;
 const fieldsValidations = {
     domain: string().required("Este campo es requerido"),
     description: string().required("Este campo es requerido"),
     optional: string(),
     range_value: string().required("Este campo es requerido"),
     state: string().required("Este campo es requerido"),
-}
+};
 
 export const CustomInput = (
     props: HTMLAttributes<HTMLDivElement> & PropsCustomBasicInput
 ) => {
-    const touched = props.formikInstance?.touched
-    const errors = props.formikInstance?.errors
-    const isValid = !!(touched![props.name] && errors![props.name])
-    const message = errors![props.name]
+    const touched = props.formikInstance?.touched;
+    const errors = props.formikInstance?.errors;
+    const isValid = !!(touched![props.name] && errors![props.name]);
+    const message = errors![props.name];
 
     return (
         <div className={`field ${props.className}`}>
@@ -76,49 +76,49 @@ export const CustomInput = (
             )}
             {InputError(isValid, message as string)}
         </div>
-    )
-}
+    );
+};
 
-export const Schema = object().shape(fieldsValidations)
+export const Schema = object().shape(fieldsValidations);
 export type DataType = InferType<typeof Schema>
 export type DataTypeWithId = DataType & { id: number }
 export const initialValues = Object.keys(fieldsValidations).reduce(
     (previous, current) => ({ ...previous, [current]: "" }),
     {}
-) as unknown as DataType
+) as unknown as DataType;
 
 export const loadItemForUpdate = (
     id: string,
     formikInstance: FormikInstance
 ) => {
-    const { data } = useFetchOne(id, "get_value_for_update")
+    const { data } = useFetchOne(id, "get_value_for_update");
     const initialValuesFormik = formikInstance.initialValues as {
         [key: string]: unknown
-    }
-    if (!data) return
+    };
+    if (!data) return;
     Object.keys(initialValuesFormik).forEach((field) => {
-        initialValuesFormik[field] = data[field as keyof DataTypeWithId]
-    })
-}
+        initialValuesFormik[field] = data[field as keyof DataTypeWithId];
+    });
+};
 export const cleanFieldsOnCreate = (formikInstance: FormikInstance) => {
     const initialValuesFormik = formikInstance.initialValues as {
         [key: string]: unknown
-    }
+    };
     Object.keys(initialValuesFormik).forEach((field) => {
-        initialValuesFormik[field] = ""
-    })
-}
+        initialValuesFormik[field] = "";
+    });
+};
 
 export const Inputs = ({
     formikInstance,
 }: {
     formikInstance: FormikInstance
 }) => {
-    const { data } = useFetch({ field: "domain", value: "DOM_STATE" })
+    const { data } = useFetch({ field: "domain", value: "DOM_STATE" });
     const itemsReference = data?.map<SelectItem>((item) => ({
         label: item.description,
         value: item.range_value,
-    }))
+    }));
 
     return (
         <>
@@ -168,5 +168,5 @@ export const Inputs = ({
                 className="col-12 sm:col-6 md:col-6 xl:col-3"
             />
         </>
-    )
-}
+    );
+};

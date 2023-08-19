@@ -1,7 +1,7 @@
-import React from "react"
+import React from "react";
 
 function seeHotel() {
-    return <div>see-hotel</div>
+    return <div>see-hotel</div>;
 }
 
-export default seeHotel
+export default seeHotel;

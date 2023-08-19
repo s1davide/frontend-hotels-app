@@ -1,5 +1,5 @@
-import { InputSwitch, InputSwitchProps } from "primereact/inputswitch"
-import React from "react"
+import { InputSwitch, InputSwitchProps } from "primereact/inputswitch";
+import React from "react";
 
 export const SwitchEnableDisable = (props: InputSwitchProps) => {
     return (
@@ -9,5 +9,5 @@ export const SwitchEnableDisable = (props: InputSwitchProps) => {
         >
             <InputSwitch {...props} />
         </div>
-    )
-}
+    );
+};

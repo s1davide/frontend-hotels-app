@@ -1,12 +1,12 @@
-import React from "react"
-import { CustomProvider, DateRangePicker } from "rsuite"
+import React from "react";
+import { CustomProvider, DateRangePicker } from "rsuite";
 import {
     DateRangePickerProps,
     DisabledDateFunction,
-} from "rsuite/esm/DateRangePicker"
-import "./CustomDateRange.scss"
-import { esES } from "rsuite/locales"
-const { beforeToday } = DateRangePicker
+} from "rsuite/esm/DateRangePicker";
+import "./CustomDateRange.scss";
+import { esES } from "rsuite/locales";
+const { beforeToday } = DateRangePicker;
 
 function CustomDateRange(
     props: DateRangePickerProps & { icon?: string; inputclassname?: string }
@@ -28,7 +28,7 @@ function CustomDateRange(
                 />
             </CustomProvider>
         </div>
-    )
+    );
 }
 
-export default CustomDateRange
+export default CustomDateRange;

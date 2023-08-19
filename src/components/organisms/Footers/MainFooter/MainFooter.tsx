@@ -1,6 +1,6 @@
-import React from "react"
-import CopyrightNotice from "src/components/atoms/CopyrightNotice"
-import Logo from "src/components/atoms/Logo/Logo"
+import React from "react";
+import CopyrightNotice from "src/components/atoms/CopyrightNotice";
+import Logo from "src/components/atoms/Logo/Logo";
 
 function MainFooter() {
     return (
@@ -56,7 +56,7 @@ function MainFooter() {
             </section>
             <CopyrightNotice className="w-full text-xs text-center mt-3"></CopyrightNotice>
         </footer>
-    )
+    );
 }
 
-export default MainFooter
+export default MainFooter;

@@ -1,7 +1,7 @@
 export const appendToFormData = (data: { [key: string]: unknown }) => {
-    const formData = new FormData()
+    const formData = new FormData();
     Object.entries(data).forEach(([key, value]) => {
-        formData.append(key, value)
-    })
-    return formData
-}
+        formData.append(key, value);
+    });
+    return formData;
+};

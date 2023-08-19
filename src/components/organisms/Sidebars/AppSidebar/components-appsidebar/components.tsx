@@ -1,14 +1,14 @@
-import React from "react"
-import { useNavigate } from "react-router-dom"
-import { Button } from "rsuite"
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Button } from "rsuite";
 const itemsSidebar: { label: string; icon: string; url: string }[] = [
     { label: "Mis Hoteles", icon: "pi-building", url: "/admin/hotels" },
     { label: "Habitaciones", icon: "pi-home", url: "/admin/rooms" },
     { label: "Reservas", icon: "pi-calendar-times", url: "/" },
     { label: "Referencias", icon: "pi-list", url: "/admin/references" },
-]
+];
 export const GroupItems = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     return (
         <ul className="w-full">
             <div className="mb-2 pl-1 font-semibold">
@@ -31,5 +31,5 @@ export const GroupItems = () => {
                 </li>
             ))}
         </ul>
-    )
-}
+    );
+};

@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react"
-import { ButtonGroup, IconButton } from "rsuite"
-import PlusIcon from "@rsuite/icons/Plus"
-import MinusIcon from "@rsuite/icons/Minus"
+import React, { useEffect, useRef, useState } from "react";
+import { ButtonGroup, IconButton } from "rsuite";
+import PlusIcon from "@rsuite/icons/Plus";
+import MinusIcon from "@rsuite/icons/Minus";
 type PropsInputNumberCustom = {
     value?: number
     onChange: (param: { value: number }) => void
@@ -9,47 +9,47 @@ type PropsInputNumberCustom = {
     min?: number
 }
 function InputNumberCustom(props: PropsInputNumberCustom) {
-    const [count, setCount] = useState(0)
-    const inputRef = useRef<HTMLInputElement>(null)
+    const [count, setCount] = useState(0);
+    const inputRef = useRef<HTMLInputElement>(null);
     useEffect(() => {
-        setCount(props.value || 0)
-    }, [props.value])
-    const min = props.min ? props.min : 0
-    const max = props.max ? props.max : 30
+        setCount(props.value || 0);
+    }, [props.value]);
+    const min = props.min ? props.min : 0;
+    const max = props.max ? props.max : 30;
 
     const changeValue = async (action: "+" | "-", customValue: string = "") => {
-        const customValueInt = parseInt(customValue)
-        if (Number.isNaN(customValueInt) && customValue !== "") return
+        const customValueInt = parseInt(customValue);
+        if (Number.isNaN(customValueInt) && customValue !== "") return;
         if (
             (action === "+" &&
                 (customValue ? customValueInt : count + 1) > max) ||
             (action === "-" && (customValue ? customValueInt : count - 1) < min)
         ) {
-            return
+            return;
         }
         const currentCount = await new Promise<number>((res) =>
             setCount((currentCount) => (res(currentCount), currentCount))
-        )
-        const changeIncrease = customValue ? customValueInt : currentCount + 1
-        const changeDecrease = customValue ? customValueInt : currentCount - 1
+        );
+        const changeIncrease = customValue ? customValueInt : currentCount + 1;
+        const changeDecrease = customValue ? customValueInt : currentCount - 1;
         if (action === "+") {
-            setCount(changeIncrease)
-            props.onChange && props.onChange({ value: changeIncrease })
+            setCount(changeIncrease);
+            props.onChange && props.onChange({ value: changeIncrease });
         } else {
-            setCount(changeDecrease)
-            props.onChange && props.onChange({ value: changeDecrease })
+            setCount(changeDecrease);
+            props.onChange && props.onChange({ value: changeDecrease });
         }
-    }
+    };
 
     const inputChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-        const value = e.target.value
+        const value = e.target.value;
         if (value === "") {
-            setCount(0)
-            props.onChange && props.onChange({ value: 0 })
+            setCount(0);
+            props.onChange && props.onChange({ value: 0 });
         } else {
-            changeValue(parseInt(value) > count ? "+" : "-", value)
+            changeValue(parseInt(value) > count ? "+" : "-", value);
         }
-    }
+    };
 
     return (
         <div>
@@ -72,7 +72,7 @@ function InputNumberCustom(props: PropsInputNumberCustom) {
                 ></IconButton>
             </ButtonGroup>
         </div>
-    )
+    );
 }
 
-export default InputNumberCustom
+export default InputNumberCustom;

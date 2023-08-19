@@ -1,38 +1,38 @@
-import { Card } from "primereact/card"
-import { DataTable } from "primereact/datatable"
-import React, { useContext, useEffect, useState } from "react"
-import { BreadcrumbContext } from "src/services/ProvidersContext"
+import { Card } from "primereact/card";
+import { DataTable } from "primereact/datatable";
+import React, { useContext, useEffect, useState } from "react";
+import { BreadcrumbContext } from "src/services/ProvidersContext";
 import {
     ColumnsComponents,
     headerTable,
-} from "./page-components/table-components"
-import { useUpdate } from "./page-functions/update-functions"
-import { Column } from "primereact/column"
-import { useFetch } from "./page-functions/fetch-data"
-import { useNavigate } from "react-router-dom"
+} from "./page-components/table-components";
+import { useUpdate } from "./page-functions/update-functions";
+import { Column } from "primereact/column";
+import { useFetch } from "./page-functions/fetch-data";
+import { useNavigate } from "react-router-dom";
 import {
     createRouterPath,
     indexBreadCrumb,
     updateRouterPath,
-} from "./module-metadata"
-import { DataTypeWithId } from "./page-components/form-components"
-import { Button } from "primereact/button"
-import "./index.scss"
+} from "./module-metadata";
+import { DataTypeWithId } from "./page-components/form-components";
+import { Button } from "primereact/button";
+import "./index.scss";
 const initialConfigurations = {
     configuredBreadcrumb: false,
-}
+};
 
 function AdminMainPage() {
-    const { setItemsBreacrumb } = useContext(BreadcrumbContext)
-    const [globalFilter, setGlobalFilter] = useState("")
+    const { setItemsBreacrumb } = useContext(BreadcrumbContext);
+    const [globalFilter, setGlobalFilter] = useState("");
     useEffect(() => {
-        if (initialConfigurations.configuredBreadcrumb) return
-        initialConfigurations.configuredBreadcrumb = true
-        setItemsBreacrumb(indexBreadCrumb)
-    })
-    const { data, refetch, isFetching } = useFetch()
-    const navigate = useNavigate()
-    const { update } = useUpdate(refetch)
+        if (initialConfigurations.configuredBreadcrumb) return;
+        initialConfigurations.configuredBreadcrumb = true;
+        setItemsBreacrumb(indexBreadCrumb);
+    });
+    const { data, refetch, isFetching } = useFetch();
+    const navigate = useNavigate();
+    const { update } = useUpdate(refetch);
     return (
         <main className=" aminnamepage">
             <Card className="w-full pr-0 mr-0">
@@ -75,7 +75,7 @@ function AdminMainPage() {
                 </DataTable>
             </Card>
         </main>
-    )
+    );
 }
 
-export default AdminMainPage
+export default AdminMainPage;

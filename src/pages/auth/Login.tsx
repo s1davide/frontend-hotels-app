@@ -1,20 +1,20 @@
-import React, { Suspense, lazy } from "react"
-import { Button } from "primereact/button"
-import { Card } from "primereact/card"
-import CopyrightNotice from "src/components/atoms/CopyrightNotice"
-import "./Login.scss"
-import Logo from "src/components/atoms/Logo/Logo"
-import "primeflex/primeflex.min.css"
-import useDocumentTitle from "src/services/PageTitle"
+import React, { Suspense, lazy } from "react";
+import { Button } from "primereact/button";
+import { Card } from "primereact/card";
+import CopyrightNotice from "src/components/atoms/CopyrightNotice";
+import "./Login.scss";
+import Logo from "src/components/atoms/Logo/Logo";
+import "primeflex/primeflex.min.css";
+import useDocumentTitle from "src/services/PageTitle";
 
 const ImagesBackgroundsLazy = lazy(
     () => import("src/components/molecules/ImagesBackgrounds/ImagesBackground")
-)
+);
 const inputClassnames =
-    "text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+    "text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full";
 
 const Login = () => {
-    useDocumentTitle("Iniciar Sesión")
+    useDocumentTitle("Iniciar Sesión");
     return (
         <>
             <main className="main-login p-component fadein animation-duration-950 flex flex-column align-items-center justify-content-center">
@@ -59,6 +59,6 @@ const Login = () => {
                 </section>
             </main>
         </>
-    )
-}
-export default Login
+    );
+};
+export default Login;

@@ -1,15 +1,15 @@
-import React, { HTMLAttributes, useRef } from "react"
+import React, { HTMLAttributes, useRef } from "react";
 
-import { Card } from "primereact/card"
-import { Button } from "primereact/button"
-import "./CustomCarousel.scss"
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react"
-import "swiper/css"
-import { SwiperOptions } from "swiper/types"
-import { DataTypeWithId as DataTypeHotels } from "src/pages/admin/hotels/page-components/form-components"
-import { DataType as DataTypeRooms } from "src/pages/admin/rooms/page-components/form-components"
+import { Card } from "primereact/card";
+import { Button } from "primereact/button";
+import "./CustomCarousel.scss";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import "swiper/css";
+import { SwiperOptions } from "swiper/types";
+import { DataTypeWithId as DataTypeHotels } from "src/pages/admin/hotels/page-components/form-components";
+import { DataType as DataTypeRooms } from "src/pages/admin/rooms/page-components/form-components";
 
-const header = (url: string) => <img alt="Card" src={url} />
+const header = (url: string) => <img alt="Card" src={url} />;
 
 type BreakpointsSwipe =
     | {
@@ -22,7 +22,7 @@ const breakpoints: BreakpointsSwipe = {
     705: { slidesPerView: 2, spaceBetween: 2 },
     915: { slidesPerView: 3, spaceBetween: 2 },
     1200: { slidesPerView: 4, spaceBetween: 2 },
-}
+};
 
 const hotelTemplate = (
     key: number,
@@ -45,14 +45,14 @@ const hotelTemplate = (
         {data.rooms.length} Habitaciones disponibles
         <p className="m-0"></p>
     </Card>
-)
+);
 
 type DivReference = React.LegacyRef<HTMLButtonElement>
 const CustomNavigation = (props: {
     prevRef: DivReference
     nextRef: DivReference
 }) => {
-    const swiper = useSwiper()
+    const swiper = useSwiper();
     return (
         <div style={{ zIndex: "-9999", top: 0, left: 0 }} className="absolute">
             <button
@@ -64,15 +64,15 @@ const CustomNavigation = (props: {
                 onClick={() => swiper.slideNext()}
             ></button>
         </div>
-    )
-}
+    );
+};
 function CustomCarousel(
     props: HTMLAttributes<HTMLDivElement> & {
         items?: (DataTypeHotels & { rooms: DataTypeRooms[] })[]
     }
 ) {
-    const prevRefNav = useRef<HTMLButtonElement>(null)
-    const nextRefNav = useRef<HTMLButtonElement>(null)
+    const prevRefNav = useRef<HTMLButtonElement>(null);
+    const nextRefNav = useRef<HTMLButtonElement>(null);
 
     return (
         <div
@@ -80,9 +80,9 @@ function CustomCarousel(
             className={`${props.className} carousel-custom relative`}
         >
             <Swiper spaceBetween={4} breakpoints={breakpoints}>
-                {/* {(props.items?props.items:[]).map((v, k) => (
+                {(props.items?props.items:[]).map((v, k) => (
                     <SwiperSlide key={k}>{hotelTemplate(k,v)}</SwiperSlide>
-                ))} */}
+                ))}
                 <CustomNavigation prevRef={prevRefNav} nextRef={nextRefNav} />
             </Swiper>
             <Button
@@ -107,7 +107,7 @@ function CustomCarousel(
                 aria-label="Notification"
             />
         </div>
-    )
+    );
 }
 
-export default CustomCarousel
+export default CustomCarousel;

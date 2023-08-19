@@ -1,13 +1,13 @@
-import { InputText } from "primereact/inputtext"
-import React, { useRef } from "react"
-import "./InputWithIcon.scss"
+import { InputText } from "primereact/inputtext";
+import React, { useRef } from "react";
+import "./InputWithIcon.scss";
 interface PropsInputWithIcon
     extends React.InputHTMLAttributes<HTMLInputElement> {
     icon?: string
 }
 
 function InputWithIcon(props: PropsInputWithIcon) {
-    const input = useRef<HTMLInputElement>(null)
+    const input = useRef<HTMLInputElement>(null);
     return (
         <div
             {...props}
@@ -25,7 +25,7 @@ function InputWithIcon(props: PropsInputWithIcon) {
                 placeholder="Ubicación"
             />
         </div>
-    )
+    );
 }
 
-export default InputWithIcon
+export default InputWithIcon;

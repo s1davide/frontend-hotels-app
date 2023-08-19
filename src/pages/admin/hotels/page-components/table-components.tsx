@@ -1,10 +1,10 @@
-import { Button } from "primereact/button"
-import { Column, ColumnEditorOptions } from "primereact/column"
-import { InputText } from "primereact/inputtext"
-import React from "react"
-import { nameModule } from "../module-metadata"
-import { DataTypeWithId } from "./form-components"
-import { SwitchEnableDisable } from "src/components/atoms/SwitchEnableDisable/SwitchEnableDisable"
+import { Button } from "primereact/button";
+import { Column, ColumnEditorOptions } from "primereact/column";
+import { InputText } from "primereact/inputtext";
+import React from "react";
+import { nameModule } from "../module-metadata";
+import { DataTypeWithId } from "./form-components";
+import { SwitchEnableDisable } from "src/components/atoms/SwitchEnableDisable/SwitchEnableDisable";
 
 export const columnsTable: { label: string; field: string }[] = [
     { label: "Nombre", field: "name" },
@@ -15,7 +15,7 @@ export const columnsTable: { label: string; field: string }[] = [
     { label: "Ciudad", field: "city" },
     { label: "Dirección", field: "address" },
     { label: "Estado", field: "state" },
-]
+];
 
 export const headerTable = (
     addHotel: () => void,
@@ -56,7 +56,7 @@ export const headerTable = (
             />
         </div>
     </div>
-)
+);
 
 export const textEditorComponent = (columnOptions: ColumnEditorOptions) => {
     return (
@@ -65,8 +65,8 @@ export const textEditorComponent = (columnOptions: ColumnEditorOptions) => {
             value={columnOptions.value}
             onChange={(e) => columnOptions.editorCallback!(e.target.value)}
         />
-    )
-}
+    );
+};
 
 export const ColumnsComponents = (
     data: DataTypeWithId[],
@@ -87,21 +87,21 @@ export const ColumnsComponents = (
                             onClick={() => {
                                 const item = data?.find(
                                     (item) => item.id === p.id
-                                )
+                                );
                                 const newItem = {
                                     ...item,
                                     state:
                                         item?.state === "enabled"
                                             ? "disabled"
                                             : "enabled",
-                                }
-                                update(newItem as DataTypeWithId)
+                                };
+                                update(newItem as DataTypeWithId);
                             }}
                             checked={p.state === "enabled"}
                         />
                     )}
                 ></Column>
-            )
+            );
         else
             return (
                 <Column
@@ -111,5 +111,5 @@ export const ColumnsComponents = (
                     header={col.label}
                     editor={textEditorComponent}
                 />
-            )
-    })
+            );
+    });
