@@ -80,7 +80,7 @@ function CustomCarousel(
             className={`${props.className} carousel-custom relative`}
         >
             <Swiper spaceBetween={4} breakpoints={breakpoints}>
-                {(props.items?props.items:[]).map((v, k) => (
+                {(props.items||[]).map((v, k) => (
                     <SwiperSlide key={k}>{hotelTemplate(k,v)}</SwiperSlide>
                 ))}
                 <CustomNavigation prevRef={prevRefNav} nextRef={nextRefNav} />
