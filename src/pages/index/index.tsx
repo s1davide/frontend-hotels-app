@@ -22,7 +22,7 @@ const Index = () => {
                     style={{ marginTop: "-35px" }}
                 ></BookComponent>
                 <h3 className="mt-3">Nuestros Hoteles recomendados</h3>
-                {/* <CustomCarousel items={data as (DataTypeHotels&{rooms:DataTypeRooms[]})[]} className="relative first-carousel w-full" /> */}
+                <CustomCarousel items={data as (DataTypeHotels&{rooms:DataTypeRooms[]})[]} className="relative first-carousel w-full" />
                 {/* <h3 className="pt-4">Hoteles por ciudad</h3> */}
                 <MobileSection />
             </section>
