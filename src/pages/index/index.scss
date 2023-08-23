@@ -1,0 +1,24 @@
+main {
+    background-color: white;
+}
+
+main h3 {
+    width: 98.9%;
+    font-size: 1.4rem !important;
+}
+.first-carousel {
+    left: 7px;
+}
+.first-carousel .p-card-title {
+    font-size: 1rem !important;
+}
+.first-carousel .p-card-subtitle {
+    font-size: 0, 5rem !important;
+}
+
+@media (max-width: 1186px) {
+    // .first-carousel .p-card {
+    //   width: 22vw !important;
+    //   height: 24vw;
+    // }
+}

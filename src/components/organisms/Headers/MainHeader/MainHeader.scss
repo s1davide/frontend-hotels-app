@@ -1,0 +1,20 @@
+header {
+    color: white;
+}
+.p-toolbar {
+    // background-color: #1565C0 !important;
+    // padding: 0 !important;
+    background: rgba(255, 255, 255, 0) !important;
+    border: none;
+    box-shadow: none !important;
+    // -webkit-backdrop-filter: blur(8px);
+    // backdrop-filter: blur(8px);
+    color: white !important;
+    //   box-sizing: content-box;
+}
+.floating {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
