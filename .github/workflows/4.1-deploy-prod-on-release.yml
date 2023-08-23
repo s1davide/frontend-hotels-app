@@ -28,6 +28,6 @@ jobs:
                   api_location: "" # Api source code path - optional
                   output_location: "dist" # Built app content directory - optional
                   ###### End of Repository/Build Configurations ######
-                  deployment_environment: "production"
+                  deployment_environment: "Production"
 
 
