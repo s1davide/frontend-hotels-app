@@ -1,0 +1,41 @@
+.SearchHotelComponent {
+    padding-top: 7px;
+    position: relative;
+}
+.SearchHotelComponent .p-inputtext {
+    border: none !important;
+}
+.SearchHotelComponent .childsSearchHotelComponent {
+    margin-bottom: 7px;
+    margin-left: 7px;
+}
+
+@media (min-width: 990px) {
+    .SearchHotelComponent {
+        width: 98%;
+        padding-right: 7px;
+    }
+    .inputSearchHotelComponent {
+        width: 310px !important;
+    }
+}
+@media (max-width: 989px) {
+    .SearchHotelComponent {
+        width: 100%;
+        padding-right: 14px;
+        left: 0;
+        flex-direction: column;
+    }
+    .inputSearchHotelComponent {
+        width: 100% !important;
+    }
+    .childsSearchHotelComponent {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .cards-carousel-hotels {
+        width: 95% !important;
+    }
+}

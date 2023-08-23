@@ -1,0 +1,54 @@
+.images-background {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to top, #3b82f6, #d4d4d4);
+    z-index: 0;
+}
+.images-background > div {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    transition: opacity 800ms;
+}
+.images-background img,
+picture {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    transition: opacity 900ms;
+}
+.images-background picture {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    z-index: 2;
+}
+.hide-images {
+    opacity: 0;
+}
+.show-images {
+    opacity: 1;
+}
+.transition-show {
+    opacity: 1;
+}
+.transition-hide {
+    opacity: 0;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

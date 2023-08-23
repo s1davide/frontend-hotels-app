@@ -1,0 +1,81 @@
+$sidebarwidth: 238px;
+$navbarheight: 56px;
+
+header {
+    position: relative;
+    z-index: 1103;
+}
+.parent-main main {
+    background-color: var(--surface-100);
+    padding: 2rem;
+    padding-top: 1rem;
+    max-height: calc(100vh - 175px);
+    overflow: auto;
+}
+.content-with-transition {
+    transition: all 200ms !important;
+}
+.logo-navbar {
+    width: $sidebarwidth;
+}
+
+.sidebar-fixed {
+    position: fixed;
+    width: $sidebarwidth !important;
+    height: calc(100vh - 57px);
+    box-shadow:
+        2px 0 4px -1px rgba(0, 0, 0, 0.2),
+        4px 0 5px 0 rgba(0, 0, 0, 0.14),
+        1px 0 10px 0 rgba(0, 0, 0, 0.12) !important;
+    z-index: 1;
+}
+.floating-sidebar-width {
+    width: $sidebarwidth !important;
+}
+.parent-content > .parent-main {
+    position: relative;
+    background-color: var(--surface-100);
+    height: calc(100vh - 55px);
+    width: 100%;
+    margin-left: $sidebarwidth;
+}
+.hide-fixed-sidebar > .parent-main {
+    margin-left: 0px;
+}
+
+.hide-fixed-sidebar .sidebar-fixed {
+    transform: translateX(calc($sidebarwidth * -1));
+}
+.p-breadcrumb {
+    box-shadow:
+        0 3px 5px rgba(0, 0, 0, 0.02),
+        0 0 2px rgba(0, 0, 0, 0.05),
+        0 1px 4px rgba(0, 0, 0, 0.08) !important;
+}
+.p-toolbar {
+    height: $navbarheight;
+}
+.p-sidebar {
+    top: $navbarheight;
+    height: calc(100vh - $navbarheight);
+}
+
+.p-dropdown .p-dropdown-label {
+    padding: 0.5rem 0.75rem;
+}
+
+.app-footer {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    height: 70px;
+}
+
+.hide-fixed-sidebar > .app-footer {
+    margin-left: 0px;
+}
+.component-show-image {
+    bottom: -50px;
+    left: 5px;
+    position: relative;
+}
