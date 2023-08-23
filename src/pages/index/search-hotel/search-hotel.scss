@@ -1,0 +1,40 @@
+
+@media (min-width: 606px) and (max-width: 840px){
+    .card-result-half-content{
+       justify-content: center;
+    }  
+    .price-card-result{
+        top: auto !important;
+        bottom: 120px !important;
+    }
+}
+@media(max-width: 605px){
+    .card-result-half-content{
+        justify-content: center;
+    }
+    .card-result-half-content>div{
+        text-align: center;
+        margin-right: 0 !important;
+    }
+    .card-result-half-content>div div{
+        justify-content: center;
+    }
+    .parent-right-content{
+        width: 100%;
+        flex-direction: row !important;
+        justify-content: space-around !important;
+    }
+    .parent-right-content span{
+        position: relative !important;
+        align-items: center !important;
+    }
+    .parent-right-content button{
+        position: relative !important;
+        height: 40px;
+        width: 94px;
+    }
+    .card-result-hotel{
+        display: flex !important;
+        flex-direction: column;
+    }
+}

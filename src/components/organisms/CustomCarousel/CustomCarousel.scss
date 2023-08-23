@@ -1,0 +1,17 @@
+.p-card {
+    overflow: hidden;
+}
+.carousel-custom .p-button {
+    width: 30px !important;
+    height: 30px !important;
+    background-color: white !important;
+    position: absolute;
+    top: 45%;
+    z-index: 1;
+}
+.carousel-custom .carousel-left-button {
+    left: -18px;
+}
+.carousel-custom .carousel-right-button {
+    right: 3px;
+}
