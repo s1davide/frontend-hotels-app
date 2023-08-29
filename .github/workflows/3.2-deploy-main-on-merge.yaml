@@ -14,7 +14,7 @@ jobs:
               with:
                   submodules: true
             - name: generate .env file
-              run:  echo "BACKEND_ENDPOINT=${{secrets.BACKEND_ENDPOINT_MAIN}}" >> .env
+              run:  echo "BACKEND_ENDPOINT_MAIN=${{secrets.BACKEND_ENDPOINT_MAIN}}" >> .env
                   
             - name: Build And Deploy
               id: builddeploy
