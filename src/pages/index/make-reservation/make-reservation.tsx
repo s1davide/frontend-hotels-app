@@ -42,14 +42,16 @@ function MakeReservation() {
         setIndexPerson((currentIndexPerson) => currentIndexPerson + 1);
     };
     const reviewAllDataAndBook = (e: React.FormEvent) => {
+
         e.preventDefault();
+        console.log(e);        
         const formData = new FormData(e.target as HTMLFormElement);
         const data = Object.fromEntries(formData);
         setEmergencyContactData(data as { [key: string]: string });
         for (let i = 0; i < numberOfPersons.length; i++) {
             const personData = personsData[i];
             if (
-                personData &&
+                personData && 
                 personData["dateOfBirth"] &&
                 personData["documentType"] &&
                 personData["email"] &&
@@ -60,6 +62,7 @@ function MakeReservation() {
                 personData["phone"]
             ) {
                 create({
+                    mainPerson:`${personsData[0].name} ${personsData[0].lastName}`,
                     personsData: personData,
                     emergencyContact: data,
                     idHotel: queryParams.get("hotel"),
