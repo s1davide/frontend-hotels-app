@@ -24,8 +24,6 @@ function CustomDateRange(
     datePicker.current?.target
         ?.querySelector("input")
         ?.addEventListener("focus", () => {
-            console.log("focus");
-
             setTimeout(() => datePicker.current?.open!(), 200);
         });
 

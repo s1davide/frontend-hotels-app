@@ -44,7 +44,6 @@ function MakeReservation() {
     const reviewAllDataAndBook = (e: React.FormEvent) => {
 
         e.preventDefault();
-        console.log(e);        
         const formData = new FormData(e.target as HTMLFormElement);
         const data = Object.fromEntries(formData);
         setEmergencyContactData(data as { [key: string]: string });
@@ -62,7 +61,7 @@ function MakeReservation() {
                 personData["phone"]
             ) {
                 create({
-                    mainPerson:`${personsData[0].name} ${personsData[0].lastName}`,
+                    mainPerson:`${personsData[0].name} ${personsData[0].last}`,
                     personsData: personData,
                     emergencyContact: data,
                     idHotel: queryParams.get("hotel"),
