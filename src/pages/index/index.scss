@@ -15,10 +15,11 @@ main h3 {
 .first-carousel .p-card-subtitle {
     font-size: 0, 5rem !important;
 }
-
-@media (max-width: 1186px) {
-    // .first-carousel .p-card {
-    //   width: 22vw !important;
-    //   height: 24vw;
-    // }
+.first-carousel 
+{
+    .p-card-header{
+       img{
+        aspect-ratio: 4/3;
+       }
+    }    
 }
